@@ -33,7 +33,7 @@ var Filter = kurentoClient.register.abstracts.Filter;
  * @classdesc
  *  This type of {@link module:core/abstracts.Filter Filter} detects UI pointers in a video feed.
  *
- * @extends module:corecore/abstracts.Filter
+ * @extends module:core/abstracts.Filter
  *
  * @constructor module:pointerdetector.PointerDetectorFilter
  *
@@ -186,7 +186,7 @@ PointerDetectorFilter.constructorParams = {
 /**
  * @alias module:pointerdetector.PointerDetectorFilter.events
  *
- * @extend module:corecore/abstracts.Filter.events
+ * @extends module:core/abstracts.Filter.events
  */
 PointerDetectorFilter.events = Filter.events.concat(['WindowIn', 'WindowOut']);
 
