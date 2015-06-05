@@ -1,7 +1,7 @@
 {
   "name": "kurento-module-pointerdetector",
   "description": "Pointer Detector Filter",
-  "license": "LGPL",
+  "license": "LGPL-2.1",
   "keywords": [
     "Kurento",
     "module",
