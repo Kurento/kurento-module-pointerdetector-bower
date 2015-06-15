@@ -4,16 +4,15 @@ require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requ
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 var inherits = require('inherits');
@@ -56,15 +55,13 @@ inherits(PointerDetectorFilter, Filter);
 // Public methods
 //
 
-
 /**
  *  Adds a new detection window for the filter to detect pointers entering or 
  *  exiting the window
  *
  * @alias module:pointerdetector.PointerDetectorFilter.addWindow
  *
- * @param   {module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam} window
-
+ * @param {module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam} window
  *  The window to be added
  *
  * @param {module:pointerdetector.PointerDetectorFilter~addWindowCallback} [callback]
@@ -76,12 +73,13 @@ PointerDetectorFilter.prototype.addWindow = function(window, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('PointerDetectorWindowMediaParam', 'window', window, {required: true}
-);
+  checkType('PointerDetectorWindowMediaParam', 'window', window, {required: true});
 
   var params = {
-    window: window,
+    window: window
   };
+
+  callback = (callback || noop).bind(this)
 
   return this._invoke(transaction, 'addWindow', params, callback);
 };
@@ -106,6 +104,8 @@ PointerDetectorFilter.prototype.clearWindows = function(callback){
 
   if(!arguments.length) callback = undefined;
 
+  callback = (callback || noop).bind(this)
+
   return this._invoke(transaction, 'clearWindows', callback);
 };
 /**
@@ -118,8 +118,7 @@ PointerDetectorFilter.prototype.clearWindows = function(callback){
  *
  * @alias module:pointerdetector.PointerDetectorFilter.removeWindow
  *
- * @param   {external:String} windowId
-
+ * @param {external:String} windowId
  *  the id of the window to be removed
  *
  * @param {module:pointerdetector.PointerDetectorFilter~removeWindowCallback} [callback]
@@ -131,12 +130,13 @@ PointerDetectorFilter.prototype.removeWindow = function(windowId, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('String', 'windowId', windowId, {required: true}
-);
+  checkType('String', 'windowId', windowId, {required: true});
 
   var params = {
-    windowId: windowId,
+    windowId: windowId
   };
+
+  callback = (callback || noop).bind(this)
 
   return this._invoke(transaction, 'removeWindow', params, callback);
 };
@@ -163,6 +163,8 @@ PointerDetectorFilter.prototype.trackColorFromCalibrationRegion = function(callb
 
   if(!arguments.length) callback = undefined;
 
+  callback = (callback || noop).bind(this)
+
   return this._invoke(transaction, 'trackColorFromCalibrationRegion', callback);
 };
 /**
@@ -174,17 +176,14 @@ PointerDetectorFilter.prototype.trackColorFromCalibrationRegion = function(callb
 /**
  * @alias module:pointerdetector.PointerDetectorFilter.constructorParams
  *
- * @property   {module:pointerdetector/complexTypes.WindowParam} calibrationRegion
-
+ * @property {module:pointerdetector/complexTypes.WindowParam} calibrationRegion
  *  region to calibrate the filter
  *
- * @property   {module:core.MediaPipeline} mediaPipeline
-
+ * @property {module:core.MediaPipeline} mediaPipeline
  *  the {@link module:core.MediaPipeline MediaPipeline} to which the filter 
  *  belongs
  *
- * @property   {module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam}[] [windows]
-
+ * @property {module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam}[] [windows]
  *  list of detection windows for the filter.
  */
 PointerDetectorFilter.constructorParams = {
@@ -199,7 +198,7 @@ PointerDetectorFilter.constructorParams = {
   windows: {
     type: 'PointerDetectorWindowMediaParam',
     isArray: true
-  },
+  }
 };
 
 /**
@@ -242,16 +241,15 @@ require('.');
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 var inherits = require('inherits');
@@ -295,16 +293,11 @@ function PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict){
     return new PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict)
 
   // Check pointerDetectorWindowMediaParamDict has the required fields
-  checkType('String', 'pointerDetectorWindowMediaParamDict.id', pointerDetectorWindowMediaParamDict.id, {required: true}
-);
-  checkType('int', 'pointerDetectorWindowMediaParamDict.height', pointerDetectorWindowMediaParamDict.height, {required: true}
-);
-  checkType('int', 'pointerDetectorWindowMediaParamDict.width', pointerDetectorWindowMediaParamDict.width, {required: true}
-);
-  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightX', pointerDetectorWindowMediaParamDict.upperRightX, {required: true}
-);
-  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightY', pointerDetectorWindowMediaParamDict.upperRightY, {required: true}
-);
+  checkType('String', 'pointerDetectorWindowMediaParamDict.id', pointerDetectorWindowMediaParamDict.id, {required: true});
+  checkType('int', 'pointerDetectorWindowMediaParamDict.height', pointerDetectorWindowMediaParamDict.height, {required: true});
+  checkType('int', 'pointerDetectorWindowMediaParamDict.width', pointerDetectorWindowMediaParamDict.width, {required: true});
+  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightX', pointerDetectorWindowMediaParamDict.upperRightX, {required: true});
+  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightY', pointerDetectorWindowMediaParamDict.upperRightY, {required: true});
   checkType('String', 'pointerDetectorWindowMediaParamDict.activeImage', pointerDetectorWindowMediaParamDict.activeImage);
   checkType('float', 'pointerDetectorWindowMediaParamDict.imageTransparency', pointerDetectorWindowMediaParamDict.imageTransparency);
   checkType('String', 'pointerDetectorWindowMediaParamDict.image', pointerDetectorWindowMediaParamDict.image);
@@ -396,16 +389,15 @@ PointerDetectorWindowMediaParam.check = checkPointerDetectorWindowMediaParam;
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 var inherits = require('inherits');
@@ -439,14 +431,10 @@ function WindowParam(windowParamDict){
     return new WindowParam(windowParamDict)
 
   // Check windowParamDict has the required fields
-  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true}
-);
-  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true}
-);
-  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true}
-);
-  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true}
-);
+  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
+  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
+  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
+  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
 
   // Init parent class
   WindowParam.super_.call(this, windowParamDict)
@@ -515,16 +503,15 @@ WindowParam.check = checkWindowParam;
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 /**
@@ -549,16 +536,15 @@ exports.WindowParam = WindowParam;
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 /**
