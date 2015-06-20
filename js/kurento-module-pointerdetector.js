@@ -294,6 +294,8 @@ function PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict){
   if(!(this instanceof PointerDetectorWindowMediaParam))
     return new PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict)
 
+  pointerDetectorWindowMediaParamDict = pointerDetectorWindowMediaParamDict || {}
+
   // Check pointerDetectorWindowMediaParamDict has the required fields
   checkType('String', 'pointerDetectorWindowMediaParamDict.id', pointerDetectorWindowMediaParamDict.id, {required: true});
   checkType('int', 'pointerDetectorWindowMediaParamDict.height', pointerDetectorWindowMediaParamDict.height, {required: true});
@@ -431,6 +433,8 @@ var ComplexType = kurentoClient.register.complexTypes.ComplexType;
 function WindowParam(windowParamDict){
   if(!(this instanceof WindowParam))
     return new WindowParam(windowParamDict)
+
+  windowParamDict = windowParamDict || {}
 
   // Check windowParamDict has the required fields
   checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
