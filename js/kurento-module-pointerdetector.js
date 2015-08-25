@@ -215,7 +215,7 @@ PointerDetectorFilter.events = Filter.events.concat(['WindowIn', 'WindowOut']);
 
 
 /**
- * Checker for {@link pointerdetector.PointerDetectorFilter}
+ * Checker for {@link module:pointerdetector.PointerDetectorFilter}
  *
  * @memberof module:pointerdetector
  *
@@ -372,7 +372,7 @@ Object.defineProperties(PointerDetectorWindowMediaParam.prototype, {
 })
 
 /**
- * Checker for {@link pointerdetector/complexTypes.PointerDetectorWindowMediaParam}
+ * Checker for {@link module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam}
  *
  * @memberof module:pointerdetector/complexTypes
  *
@@ -488,7 +488,7 @@ Object.defineProperties(WindowParam.prototype, {
 })
 
 /**
- * Checker for {@link pointerdetector/complexTypes.WindowParam}
+ * Checker for {@link module:pointerdetector/complexTypes.WindowParam}
  *
  * @memberof module:pointerdetector/complexTypes
  *
