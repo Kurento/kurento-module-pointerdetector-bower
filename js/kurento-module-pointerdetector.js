@@ -109,6 +109,12 @@ PointerDetectorFilter.prototype.clearWindows = function(callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
+  var usePromise = false;
+  
+  if (callback == undefined) {
+    usePromise = true;
+  }
+  
   if(!arguments.length) callback = undefined;
 
   callback = (callback || noop).bind(this)
@@ -168,6 +174,12 @@ PointerDetectorFilter.prototype.trackColorFromCalibrationRegion = function(callb
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
+  var usePromise = false;
+  
+  if (callback == undefined) {
+    usePromise = true;
+  }
+  
   if(!arguments.length) callback = undefined;
 
   callback = (callback || noop).bind(this)
