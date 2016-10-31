@@ -80,7 +80,9 @@ PointerDetectorFilter.prototype.addWindow = function(window, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('PointerDetectorWindowMediaParam', 'window', window, {required: true});
+  //  
+  // checkType('PointerDetectorWindowMediaParam', 'window', window, {required: true});
+  //  
 
   var params = {
     window: window
@@ -143,7 +145,9 @@ PointerDetectorFilter.prototype.removeWindow = function(windowId, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('String', 'windowId', windowId, {required: true});
+  //  
+  // checkType('String', 'windowId', windowId, {required: true});
+  //  
 
   var params = {
     windowId: windowId
@@ -316,14 +320,23 @@ function PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict){
   pointerDetectorWindowMediaParamDict = pointerDetectorWindowMediaParamDict || {}
 
   // Check pointerDetectorWindowMediaParamDict has the required fields
-  checkType('String', 'pointerDetectorWindowMediaParamDict.id', pointerDetectorWindowMediaParamDict.id, {required: true});
-  checkType('int', 'pointerDetectorWindowMediaParamDict.height', pointerDetectorWindowMediaParamDict.height, {required: true});
-  checkType('int', 'pointerDetectorWindowMediaParamDict.width', pointerDetectorWindowMediaParamDict.width, {required: true});
-  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightX', pointerDetectorWindowMediaParamDict.upperRightX, {required: true});
-  checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightY', pointerDetectorWindowMediaParamDict.upperRightY, {required: true});
-  checkType('String', 'pointerDetectorWindowMediaParamDict.activeImage', pointerDetectorWindowMediaParamDict.activeImage);
-  checkType('float', 'pointerDetectorWindowMediaParamDict.imageTransparency', pointerDetectorWindowMediaParamDict.imageTransparency);
-  checkType('String', 'pointerDetectorWindowMediaParamDict.image', pointerDetectorWindowMediaParamDict.image);
+  // 
+  // checkType('String', 'pointerDetectorWindowMediaParamDict.id', pointerDetectorWindowMediaParamDict.id, {required: true});
+  //  
+  // checkType('int', 'pointerDetectorWindowMediaParamDict.height', pointerDetectorWindowMediaParamDict.height, {required: true});
+  //  
+  // checkType('int', 'pointerDetectorWindowMediaParamDict.width', pointerDetectorWindowMediaParamDict.width, {required: true});
+  //  
+  // checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightX', pointerDetectorWindowMediaParamDict.upperRightX, {required: true});
+  //  
+  // checkType('int', 'pointerDetectorWindowMediaParamDict.upperRightY', pointerDetectorWindowMediaParamDict.upperRightY, {required: true});
+  //  
+  // checkType('String', 'pointerDetectorWindowMediaParamDict.activeImage', pointerDetectorWindowMediaParamDict.activeImage);
+  //  
+  // checkType('float', 'pointerDetectorWindowMediaParamDict.imageTransparency', pointerDetectorWindowMediaParamDict.imageTransparency);
+  //  
+  // checkType('String', 'pointerDetectorWindowMediaParamDict.image', pointerDetectorWindowMediaParamDict.image);
+  //  
 
   // Init parent class
   PointerDetectorWindowMediaParam.super_.call(this, pointerDetectorWindowMediaParamDict)
@@ -458,10 +471,15 @@ function WindowParam(windowParamDict){
   windowParamDict = windowParamDict || {}
 
   // Check windowParamDict has the required fields
-  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
-  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
-  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
-  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
+  // 
+  // checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
+  //  
 
   // Init parent class
   WindowParam.super_.call(this, windowParamDict)
