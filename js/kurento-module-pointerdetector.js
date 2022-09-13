@@ -43,7 +43,7 @@ function noop(error, result) {
  * Builder for the :rom:cls:`PointerDetector`.
  *
  * @classdesc
- *  This type of {@link module:core/abstracts.Filter Filter} detects UI pointers
+ *  This type of {@link Filter} detects UI pointers in a video feed.
  *
  * @extends module:core/abstracts.Filter
  *
@@ -203,8 +203,7 @@ PointerDetectorFilter.prototype.trackColorFromCalibrationRegion = function(callb
  *  region to calibrate the filter
  *
  * @property {module:core.MediaPipeline} mediaPipeline
- *  the {@link module:core.MediaPipeline MediaPipeline} to which the filter 
- *  belongs
+ *  the {@link MediaPipeline} to which the filter belongs
  *
  * @property {module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam}[] [windows]
  *  list of detection windows for the filter.
@@ -311,7 +310,9 @@ var ComplexType = kurentoClient.register.complexTypes.ComplexType;
  * @property {external:String} image
  *  uri of the image to be used for the window.
  *  If {@link 
- *  module:pointerdetector/complexTypes.PointerDetectorWindowMediaParam#activeImage}
+ *  pointerdetector/complexTypes.PointerDetectorWindowMediaParam#activeImage} 
+ *  has been set, it will only be shown when the pointer is outside of the 
+ *  window.
  */
 function PointerDetectorWindowMediaParam(pointerDetectorWindowMediaParamDict){
   if(!(this instanceof PointerDetectorWindowMediaParam))
