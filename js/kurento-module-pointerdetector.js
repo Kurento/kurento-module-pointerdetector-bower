@@ -607,7 +607,7 @@ exports.WindowParam = WindowParam;
  */
 
 Object.defineProperty(exports, 'name',    {value: 'pointerdetector'});
-Object.defineProperty(exports, 'version', {value: '6.18.0'});
+Object.defineProperty(exports, 'version', {value: '6.18.1-dev'});
 
 
 var PointerDetectorFilter = require('./PointerDetectorFilter');
